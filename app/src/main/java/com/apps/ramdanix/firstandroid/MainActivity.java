@@ -1,5 +1,7 @@
 package com.apps.ramdanix.firstandroid;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText edUsername;
     private EditText edPassword;
     private Button btnLogin;
+
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (getUsername.equals("admin") && getPassword.equals("admin")){
                     pesan("berhasil login");
+                    startActivity(new Intent(context,HomeActivity.class));
                 }else{
                     pesan("gagal login");
 
